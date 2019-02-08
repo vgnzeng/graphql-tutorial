@@ -12,16 +12,16 @@ var books = [
 
 const BookType = new GraphQLObjectType({
   name: 'Book',
-  field: () => ({
+  fields: () => ({
     id: {type: GraphQLString},
     name: {type: GraphQLString},
-    genre: {type: graphQLString}
+    genre: {type: GraphQLString}
   })
 });
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
-  field: {
+  fields: {
     book: {
       type: BookType,
       args: {
@@ -39,5 +39,5 @@ const RootQuery = new GraphQLObjectType({
 
 module.exports = new GraphQLSchema({
   query: RootQuery
-})
+});
 
